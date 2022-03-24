@@ -18,12 +18,13 @@ namespace Goerge_Timetable {
 
         public MainWindow() {
             InitializeComponent();
-            if (!System.IO.File.Exists(dir))
-                System.IO.File.WriteAllLines(dir, new string[] {
+            if (!File.Exists(dir))
+                File.WriteAllLines(dir, new string[] {
                     "Background: 255,32,32,32",
                     "Foreground: 255,255,255,255",
                     "X Background: 255,232,28,28",
                     "X Foreground: 255,12,12,12",
+                    "Font Size: 30",
                     "Exam 1 Name Here; 22/07/2022 13:41:00",
                     "Exam 2 Name Here; 23/07/2022 09:01:23"
                 });
@@ -40,8 +41,10 @@ namespace Goerge_Timetable {
             MainTXTBlock.Foreground = new SolidColorBrush(Color.FromArgb(fg[0], fg[1], fg[2], fg[3]));
             CloseBTN.Background = new SolidColorBrush(Color.FromArgb(xb[0], xb[1], xb[2], xb[3]));
             CloseBTN.Foreground = new SolidColorBrush(Color.FromArgb(xf[0], xf[1], xf[2], xf[3]));
-            
-            for (int line = 4; line < FileData.Length; line++) {
+
+            MainTXTBlock.FontSize = int.Parse(FileData[4]);
+
+            for (int line = 5; line < FileData.Length; line++) {
                 Subjects.Add(FileData[line].Split(';')[0].Trim());
                 Dates.Add(DateTime.Parse(FileData[line].Split(';')[1].Trim()));
             }
