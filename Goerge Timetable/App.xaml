@@ -1,7 +1,7 @@
-﻿<Application x:Class="Goerge_Timetable.App"
+﻿<Application x:Class="Exam_Countdown.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Goerge_Timetable"
+             xmlns:local="clr-namespace:Exam_Countdown"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
