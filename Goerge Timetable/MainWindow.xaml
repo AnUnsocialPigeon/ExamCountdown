@@ -17,6 +17,7 @@
         <Button x:Name="ResizeBTN" Content="/" HorizontalAlignment="Right" Background="#FFD32525" Width="20" PreviewMouseLeftButtonDown="WindowResize" Height="20" VerticalAlignment="Bottom"/>
         <Button x:Name="ShowHideBTN" Content="H" HorizontalAlignment="Right" Background="#FFD32525" Width="20" Height="20" VerticalAlignment="Top" Click="ShowHideBTN_Click"/>
         <Button x:Name="SaveBTN" Content="S" Click="SaveBTN_Click" HorizontalAlignment="Right" Background="#FFD32525" VerticalAlignment="Top" Width="20" Margin="0,50,0,0"/>
+        <Button x:Name="FileOpenerBTN" Content="F" Click="FileOpenerBTN_Click" HorizontalAlignment="Right" Background="#FFD32525" VerticalAlignment="Top" Width="20" Margin="0,200,0,0"/>
 
     </Grid>
 </Window>

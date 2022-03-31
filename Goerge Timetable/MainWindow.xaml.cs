@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -122,6 +123,7 @@ namespace Exam_Countdown {
             ResizeBTN.IsEnabled = !ShowHide;
             SaveBTN.IsEnabled = !ShowHide;
             CloseBTN.IsEnabled = !ShowHide;
+            FileOpenerBTN.IsEnabled = !ShowHide;
 
             TextLeftBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
             TextCenterBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
@@ -129,6 +131,7 @@ namespace Exam_Countdown {
             ResizeBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
             SaveBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
             CloseBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
+            FileOpenerBTN.Visibility = (Visibility)Convert.ToInt32(ShowHide);
         }
 
         private void SaveConfigFile() {
@@ -171,5 +174,16 @@ namespace Exam_Countdown {
             SendMessage(hwndSource.Handle, 0x112, (IntPtr)61448, IntPtr.Zero);
         }
         #endregion
+
+        private void FileOpenerBTN_Click(object sender, RoutedEventArgs e) {
+            try {
+                using Process fileopener = new Process();
+
+                fileopener.StartInfo.FileName = "notepad";
+                fileopener.StartInfo.Arguments = dir;
+                fileopener.Start();
+            }
+            catch { return; }
+        }
     }
 }
